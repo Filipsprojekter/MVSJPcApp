@@ -1,0 +1,75 @@
+﻿<Page
+    x:Class="MVSJPcApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:MVSJPcApp"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <Grid>
+        <Frame x:Name="MainFrame" />
+
+        <SplitView
+            x:Name="MySplitView"
+            DisplayMode="CompactInline"
+            IsPaneOpen="True">
+            <SplitView.Pane>
+                <StackPanel Margin="0,30,0,0">
+                    <RadioButton Click="RadioButtonPaneItem_Click" Tag="Search">
+                        <StackPanel Orientation="Horizontal">
+                            <SymbolIcon Symbol="Find" />
+                            <TextBlock Margin="15,0,0,0" Text="Search" />
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton Click="RadioButtonPaneItem_Click" Tag="Create">
+                        <StackPanel Orientation="Horizontal">
+                            <SymbolIcon Symbol="Add" />
+                            <TextBlock Margin="15,0,0,0" Text="Create Profile" />
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton Click="RadioButtonPaneItem_Click" Tag="Manage">
+                        <StackPanel Orientation="Horizontal">
+                            <SymbolIcon Symbol="People" />
+                            <TextBlock Margin="15,0,0,0" Text="Manage Profiles" />
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton Click="RadioButtonPaneItem_Click" Tag="Add Models">
+                        <StackPanel Orientation="Horizontal">
+                            <SymbolIcon Symbol="Add" />
+                            <TextBlock Margin="15,0,0,0" Text="Add Pc Model" />
+                        </StackPanel>
+                    </RadioButton>
+
+                </StackPanel>
+            </SplitView.Pane>
+
+        </SplitView>
+
+        <Button
+            x:Name="HamburgerButton"
+            Width="{Binding CompactPaneLength, ElementName=MySplitView}"
+            VerticalAlignment="Top"
+            Click="HamburgerButton_OnClick">
+            <StackPanel>
+                <Rectangle
+                    Width="15"
+                    Height="2"
+                    Margin="2"
+                    Fill="White" />
+                <Rectangle
+                    Width="15"
+                    Height="2"
+                    Margin="2"
+                    Fill="White" />
+                <Rectangle
+                    Width="15"
+                    Height="2"
+                    Margin="2"
+                    Fill="White" />
+            </StackPanel>
+        </Button>
+
+    </Grid>
+</Page>

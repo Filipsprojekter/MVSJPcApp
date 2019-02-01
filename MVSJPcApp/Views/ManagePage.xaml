@@ -1,0 +1,198 @@
+﻿<Page
+    x:Class="MVSJPcApp.Views.ManagePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:ViewModels="using:MVSJPcApp.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:MVSJPcApp.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+
+
+    <Page.DataContext>
+        <ViewModels:WhateverViewModel />
+    </Page.DataContext>
+
+
+
+    <ScrollViewer>
+        <Grid x:Name="BlurGrid">
+
+            <StackPanel>
+
+
+                <StackPanel
+                    x:Name="SearchControls"
+                    Width="1230"
+                    Height="100"
+                    Margin="0,80,0,0"
+                    BorderBrush="LightSlateGray"
+                    BorderThickness="5"
+                    Orientation="Horizontal">
+                    <ComboBox
+                        x:Name="ArrangeBox"
+                        Width="150"
+                        Height="50"
+                        Margin="20,25,15,15"
+                        PlaceholderText="Order">
+                        <ComboBoxItem Content="Standard" />
+                        <ComboBoxItem Content="A -&gt; Å" />
+                        <ComboBoxItem Content="Å -&gt; A" />
+
+
+
+
+                    </ComboBox>
+                    <ComboBox
+                        x:Name="LokationBox"
+                        Width="150"
+                        Height="50"
+                        Margin="20,25,15,15"
+                        PlaceholderText="Brugertype" />
+                    <ComboBox
+                        x:Name="WrxBox"
+                        Width="150"
+                        Height="50"
+                        Margin="40,25,15,15"
+                        PlaceholderText="Lokation" />
+                    <ComboBox
+                        x:Name="ModelBox"
+                        Width="150"
+                        Height="50"
+                        Margin="65,25,15,15"
+                        PlaceholderText="Wrx-kode" />
+                    <Canvas
+                        Width="250"
+                        Height="90"
+                        Margin="70,0,15,15">
+                        <Canvas.Background>
+                            <ImageBrush ImageSource="ms-appx:///Assets/PolitiLogo.png" Stretch="Fill" />
+                        </Canvas.Background>
+
+
+
+
+                    </Canvas>
+
+
+                </StackPanel>
+
+                <StackPanel
+                    Width="1230"
+                    Height="700"
+                    Margin="10"
+                    BorderBrush="LightSlateGray"
+                    BorderThickness="5">
+
+
+                    <StackPanel Height="680">
+                        <Frame x:Name="ListFrame" />
+
+                        <ListView
+                            Height="680"
+                            Margin="0,0,10,0"
+                            ItemsSource="{Binding UserList}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Width="1230" Height="100">
+                                        <TextBlock
+                                            Width="100"
+                                            Height="50"
+                                            HorizontalAlignment="Left"
+                                            Text="{Binding Navn}" />
+                                        <TextBlock
+                                            Width="100"
+                                            Height="50"
+                                            Margin="-725,-50,0,0"
+                                            Text="{Binding BrugerType}" />
+                                        <TextBlock
+                                            Width="100"
+                                            Height="50"
+                                            Margin="-250,-50,0,0"
+                                            Text="{Binding Lokation}" />
+                                        <TextBlock
+                                            Width="100"
+                                            Height="50"
+                                            Margin="200,-50,0,0"
+                                            Text="{Binding Wrx}" />
+
+                                        <RadioButton Margin="850,-80,0,0" Click="ManagePage2Base_OnClick">
+
+                                            <StackPanel>
+                                                <SymbolIcon Symbol="People" />
+                                                <TextBlock Margin="-10,-20" Text="Edit" />
+
+                                            </StackPanel>
+                                        </RadioButton>
+                                        <RadioButton Margin="1050,-80,0,0" Click="CreatePopUpOpen_OnClick">
+                                            <StackPanel>
+                                                <SymbolIcon Symbol="Delete" />
+                                                <TextBlock Margin="-10,-20" Text="Delete" />
+
+                                            </StackPanel>
+                                        </RadioButton>
+
+
+                                    </StackPanel>
+
+
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackPanel>
+                </StackPanel>
+
+
+
+
+            </StackPanel>
+
+            <Popup
+                x:Name="CreatePopUp"
+                Closed="CreatePopUp_OnClosed"
+                HorizontalOffset="700"
+                IsLightDismissEnabled="True"
+                VerticalOffset="300">
+                <Border
+                    Width="500"
+                    Height="200"
+                    Background="{StaticResource AppBarBackgroundThemeBrush}"
+                    BorderBrush="{StaticResource ApplicationForegroundThemeBrush}"
+                    BorderThickness="2">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontSize="24.667"
+                            Text="Er du sikker på at du vil slette brugeren?" />
+                        <StackPanel Margin="0,30,0,0" Orientation="Horizontal">
+                            <StackPanel Width="218">
+                                <Button
+                                    Width="100"
+                                    Height="40"
+                                    Margin="0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Bottom"
+                                    Click="ClosePopUp_OnClick"
+                                    Content="Close" />
+                            </StackPanel>
+                            <StackPanel Width="218">
+                                <Button
+                                    Width="100"
+                                    Height="40"
+                                    HorizontalAlignment="Right"
+                                    Click="DeleteBase_OnClick"
+                                    Content="Yes" />
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </Popup>
+
+
+        </Grid>
+    </ScrollViewer>
+</Page>
