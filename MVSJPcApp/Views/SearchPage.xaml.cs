@@ -12,6 +12,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Microsoft.Xaml.Interactions.Core;
+using MVSJPcApp.ViewModels;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -27,12 +29,7 @@ namespace MVSJPcApp.Views
             this.InitializeComponent();
         }
 
-        private void ArrangeBox_OnChecked(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void ArrangeBox_OnUnchecked(object sender, RoutedEventArgs e)
+        private void ArrangeBox_Click(object sender, RoutedEventArgs e)
         {
             
         }
