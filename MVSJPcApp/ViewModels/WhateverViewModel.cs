@@ -23,19 +23,20 @@ namespace MVSJPcApp.ViewModels
         {
 
             UserList = new ObservableCollection<User>();
-            UserList.Add(new User("Køge", "Beredskab", "Philip", "wrx55555"));
-            UserList.Add(new User("Køge", "Beredskab", "Filip", "Wrx12345"));
-            UserList.Add(new User("Køge", "Beredskab", "Filllllip", "Wrx12341"));
-            UserList.Add(new User("Køge", "Beredskab", "Fillllip", "Wrx12342"));
-            UserList.Add(new User("Køge", "Beredskab", "Filllip", "Wrx12343"));
-            UserList.Add(new User("Køge", "Beredskab", "Fillip", "Wrx12344"));
+            UserList.Add(new User("Køge", "Beredskab", "adolf", "wrx55555"));
+            UserList.Add(new User("Køge", "Beredskab", "Dame", "Wrx12345"));
+            UserList.Add(new User("Køge", "Beredskab", "Egon", "Wrx12341"));
+            UserList.Add(new User("Køge", "Beredskab", "Bodil", "Wrx12342"));
+            UserList.Add(new User("Køge", "Beredskab", "Cecil", "Wrx12343"));
+            UserList.Add(new User("Køge", "Beredskab", "Filip", "Wrx12344"));
 
             //Brug Ny frame med CollectionViewSource med sortering efter bogstaver. Lav ny Frame for hver sortering. 
            
-
+            AtilÅUserList = new ObservableCollection<User>(UserList.OrderBy(x => x.Navn).ToList());
         }
 
-
+      
+       
 
 
 

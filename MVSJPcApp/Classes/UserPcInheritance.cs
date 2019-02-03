@@ -16,5 +16,10 @@ namespace MVSJPcApp.Classes
             Lokation = lokation;
             BrugerType = brugerType;
         }
+
+        public override string ToString()
+        {
+            return $"{nameof(Lokation)}: {Lokation}, {nameof(BrugerType)}: {BrugerType}";
+        }
     }
 }

@@ -20,5 +20,10 @@ namespace MVSJPcApp.NewFolder1
             BrugerType = brugerType;
 
         }
+
+        public override string ToString()
+        {
+            return $"{base.ToString()}, {nameof(Model)}: {Model}, {nameof(DateTime)}: {DateTime}";
+        }
     }
 }

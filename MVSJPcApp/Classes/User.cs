@@ -19,6 +19,10 @@ namespace MVSJPcApp
             Lokation = lokation;
             BrugerType = brugerType;
         }
-        
+
+        public override string ToString()
+        {
+            return $"{nameof(Navn)}: {Navn}, {nameof(Wrx)}: {Wrx}";
+        }
     }
 }
