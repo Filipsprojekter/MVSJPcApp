@@ -23,7 +23,7 @@ namespace MVSJPcApp.ViewModels
         {
 
             UserList = new ObservableCollection<User>();
-            UserList.Add(new User("Køge", "Beredskab", "Pikkemand", "wrx55555"));
+            UserList.Add(new User("Køge", "Beredskab", "Philip", "wrx55555"));
             UserList.Add(new User("Køge", "Beredskab", "Filip", "Wrx12345"));
             UserList.Add(new User("Køge", "Beredskab", "Filllllip", "Wrx12341"));
             UserList.Add(new User("Køge", "Beredskab", "Fillllip", "Wrx12342"));

@@ -24,7 +24,7 @@
                     Width="500"
                     Height="200"
                     FontSize="36px"
-                    Text="Luder" />
+                    Text="Test" />
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Column="0">
@@ -33,7 +33,7 @@
                     Width="750"
                     Height="1000"
                     FontSize="36px"
-                    Text="Luder" />
+                    Text="Test" />
             </StackPanel>
         </StackPanel>
 
